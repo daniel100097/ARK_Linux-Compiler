@@ -45,6 +45,7 @@ class Main:
     def __init__(self, src_dir, des_dir, mod_id):
         if self.make(src_dir, des_dir):
             if self.mod_file(src_dir, des_dir, mod_id):
+                os.rename(des_dir + "/.mod", des_dir + "/../" + mod_id + ".mod")
                 print "UPDATE Successfully " + mod_id
 
     @staticmethod
